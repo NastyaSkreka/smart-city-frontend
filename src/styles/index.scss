@@ -1,0 +1,27 @@
+@import 'normalize.css'; 
+@import './fonts/fonts.scss';
+
+:root {
+  --secondary-color: #f9fafc;
+  --background-color: #ffff;
+
+}
+
+body {
+  margin: 0;
+  font-family: 'e-Ukraine', sans-serif;;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color); 
+}
+
+#root {
+  min-height: 100vh;
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: var(--background-color); 
+}
