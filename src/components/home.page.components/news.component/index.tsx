@@ -45,6 +45,7 @@ function NewsComponent() {
         <SliderComponent
          slides={slides}
          isNews
+         isCenterSlideActive
          position="left"
         />
         <styled.NewsContentBody>

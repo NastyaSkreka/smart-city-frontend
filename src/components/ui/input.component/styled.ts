@@ -14,11 +14,10 @@ export const Input = styled.input<{ hasIcon: boolean; width: string }>`
   position: relative;
 
   &::placeholder {
-    color: #969696;
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 33%;
-    font-family: "e-Ukraine";
+    font-family: "e-Ukraine", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #8d8d8d;
   }
 `;
 

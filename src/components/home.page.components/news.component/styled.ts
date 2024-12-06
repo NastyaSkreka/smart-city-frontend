@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NewsContainer = styled.div`
- padding: 130px 0px;
+ padding: 108px 0px;
  background-color: #f9fafc;
  position: relative;
 `

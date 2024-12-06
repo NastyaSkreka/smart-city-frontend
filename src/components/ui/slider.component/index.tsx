@@ -20,13 +20,16 @@ const SliderContainer = styled.div<{ isNews: boolean; position: string }>`
   display: flex;
 `;
 
-export const NavButtons = styled.div`
+export const NavButtons = styled.div<{ isNews: boolean, isCenterSlideActive: boolean }>`
   display: flex;
-  gap: 130px;
-  left: 35px;
+  gap: ${({ isNews, isCenterSlideActive }) =>
+  isNews && isCenterSlideActive ? "250px" : isNews ? "242px" : "135px"} !important;
+  left: ${({ isNews, isCenterSlideActive }) =>
+  isNews && isCenterSlideActive ? "220px" : isNews ? "5px" : "45px"} !important;
   position: absolute;
   z-index: 10;
-  bottom: -25px;
+  bottom: ${({ isNews, isCenterSlideActive }) =>
+  isNews && isCenterSlideActive ? "-53px" : isNews ? "-53px" : "-25px"} !important;
 `;
 
 export const PrevButton = styled.button`
@@ -41,49 +44,83 @@ export const NextButton = styled.button`
   cursor: pointer;
 `;
 
-const SlideNumber = styled.div`
+const SlideNumber = styled.div<{ isNews: boolean, isCenterSlideActive: boolean }>`
     position: absolute;
-    right: 64px;
-    bottom: -88px;
-    font-family: "e-Ukraine Head",sans-serif;
+    ${({ isNews, isCenterSlideActive }) =>
+    isNews && isCenterSlideActive ? "left: 14px;" : "right: 0px;"}
+
+    bottom: ${({ isNews, isCenterSlideActive }) =>
+    isNews && isCenterSlideActive ? "-43px" : isNews ? "-43px" : "-88px"};
+
+    font-family: "e-Ukraine-Head";
     font-weight: 100;
     font-size: 36px;
     line-height: 120%;
     color: #656565;
 `;
 
-export const StyledSwiper = styled(Swiper)<{ isNews: boolean }>`
+export const StyledSwiper = styled(Swiper)<{ isNews: boolean, isCenterSlideActive: boolean }>`
   display: flex;
-  max-width: ${({ isNews }) => (isNews ? "700px" : "576px")};
+
+  max-width: ${({ isNews, isCenterSlideActive }) =>
+  isNews && isCenterSlideActive ? "750px" : isNews ? "770px" : "576px"} !important;
+
   align-items: flex-end;
   position: relative;
 `;
 
-export const StyledSwiperSlide = styled(SwiperSlide)<{ isNews: boolean }>`
+export const StyledSwiperSlide = styled(SwiperSlide)<{ isNews: boolean, isCenterSlideActive: boolean }>`
   width: ${({ isNews }) => (isNews ? "218px" : "164px")} !important;
-  height: ${({ isNews }) => (isNews ? "284px" : "")} !important;
   transition: width 0.3s ease;
   display: flex;
   align-items: flex-end;
 
+  height: ${({ isNews, isCenterSlideActive }) =>
+  isNews && isCenterSlideActive ? "300px" : isNews ? "325px" : ""} !important;
+
   &.swiper-slide-active {
     width: ${({ isNews }) => (isNews ? "303px" : "218px")} !important;
-    height: ${({ isNews }) => (isNews ? "395px" : "350px")} !important;
-    margin-left: 30px !important;
+    height: ${({ isNews }) => (isNews ? "405px" : "350px")} !important;
+    margin-left: ${({ isNews, isCenterSlideActive }) =>
+    isNews && isCenterSlideActive ? "-5px" : isNews ? "60px" : "50px"} !important;
+    margin-right: ${({ isNews }) => (isNews ? "5px" : "10px")} !important;
+  }
+
+  &.swiper-slide-active:nth-of-type(1) {
+    margin-left: 0 !important;
   }
 `;
 
-const LineUnderArrows = styled.div`
+const LineUnderArrows = styled.div<{ isNews: boolean, isCenterSlideActive: boolean }>`
   border: 3px solid #d8156b;
-  width: 186px;
-  height: 0px;
+  
+  width: ${({ isNews, isCenterSlideActive }) =>
+  isNews && isCenterSlideActive ? "315px" : isNews ? "300px" : "186px"};
+
   position: absolute;
-  left: 22%;
+  left: ${({ isNews, isCenterSlideActive }) =>
+  isNews && isCenterSlideActive ? "51%" : "22%"};
+
   transform: translateX(-50%);
   bottom: -35px;
+  bottom: ${({ isNews, isCenterSlideActive }) =>
+  isNews && isCenterSlideActive ? "-60px" : isNews ? "-60px" : "-35px"};
+  z-index: 2;
 `;
 
-function SliderComponent({ slides, isNews = false, position = "left" }: any) {
+const SecondLineUnderArrows = styled.div<{ isNews: boolean, isCenterSlideActive: boolean }>`
+  border: 1px solid #bcbcbc;
+  width: ${({ isNews, isCenterSlideActive }) =>
+  isNews && isCenterSlideActive ? "750px" :  "670px"};
+  position: absolute;
+  left: ${({ isNews, isCenterSlideActive }) =>
+  isNews && isCenterSlideActive ? "50%" :  "55%"}; 
+  transform: translateX(-50%);
+  bottom:-59px;
+  z-index: 1;
+`;
+
+function SliderComponent({ slides, isNews = false, position = "left", isCenterSlideActive = false}: any) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
@@ -108,7 +145,8 @@ function SliderComponent({ slides, isNews = false, position = "left" }: any) {
       <StyledSwiper
         isNews={isNews}
         slidesPerView={3}
-        centeredSlides={isNews}
+        isCenterSlideActive={isCenterSlideActive}
+        centeredSlides={isCenterSlideActive}
         spaceBetween={isNews ? 20 : 18}
         loop={true}
         modules={[Navigation]}
@@ -116,7 +154,7 @@ function SliderComponent({ slides, isNews = false, position = "left" }: any) {
         onSlideChange={(swiper: any) => setActiveIndex(swiper.realIndex)}
       >
         {slides.map((slide: any, index: number) => (
-          <StyledSwiperSlide key={index} isNews={isNews}>
+          <StyledSwiperSlide key={index} isNews={isNews} isCenterSlideActive={isCenterSlideActive}>
             {isNews ? (
               <NewsCardComponent
                 slide={slide}
@@ -131,7 +169,7 @@ function SliderComponent({ slides, isNews = false, position = "left" }: any) {
           </StyledSwiperSlide>
         ))}
       </StyledSwiper>
-      <NavButtons>
+      <NavButtons isNews={isNews} isCenterSlideActive={isCenterSlideActive}>
         <PrevButton onClick={handlePrev}>
           <img src={PrevIcon} alt="arrow-icon" />
         </PrevButton>
@@ -139,8 +177,9 @@ function SliderComponent({ slides, isNews = false, position = "left" }: any) {
           <img src={NextIcon} alt="arrow-icon" />
         </NextButton>
       </NavButtons>
-      <LineUnderArrows />
-      <SlideNumber>
+      <LineUnderArrows isNews={isNews} isCenterSlideActive={isCenterSlideActive}/>
+       {isNews && <SecondLineUnderArrows isNews={isNews} isCenterSlideActive={isCenterSlideActive}/>}
+      <SlideNumber  isNews={isNews} isCenterSlideActive={isCenterSlideActive}>
         {String(activeIndex + 1).padStart(2, "0")}
       </SlideNumber>
     </SliderContainer>

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const QuickAccessContainer = styled.div`
-  padding: 100px 0;
+  padding-top: 88px;
+  padding-bottom: 30px;
   background-color: #f9fafc;
 `;
 

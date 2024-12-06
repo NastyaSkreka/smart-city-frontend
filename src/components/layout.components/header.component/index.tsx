@@ -8,23 +8,20 @@ function HeaderComponent() {
   return (
     <styled.Header>
       <styled.HeaderContainer>
-        <styled.Column>
-           
+        <styled.LogoMenuColumn>
           <styled.Logo src={logo} alt="logo" />
-      
+
           <styled.menuIcon src={menuIcon} alt="menu-icon" />
-        </styled.Column>
-        <styled.Column>
-          <div>+7°C...+17°C</div>
-        </styled.Column>
-        <styled.Column>
-          <div>UK</div>
+        </styled.LogoMenuColumn>
+        <styled.WeatherColumn>+7°C...+17°C</styled.WeatherColumn>
+        <styled.UserInfoColumn>
+          <styled.LocationLabel>UK</styled.LocationLabel>
           <img src={hiddenIcon} alt="visibility-icon" />
           <img src={userIcon} alt="user-icon" />
-        </styled.Column>
+        </styled.UserInfoColumn>
       </styled.HeaderContainer>
     </styled.Header>
-  );
-}
+  ); 
+} 
 
 export default HeaderComponent;

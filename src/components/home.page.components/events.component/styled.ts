@@ -11,7 +11,7 @@ export const EventsContent = styled.div`
   border: 1px solid #494a4c;
   border-radius: 17px;
   height: 233px;
-  padding: 16px 76px;
+  padding: 16px 130px;
 `;
 export const EventsContentBody = styled.div`
   display: flex;

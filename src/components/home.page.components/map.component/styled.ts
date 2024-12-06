@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MapContainer = styled.div`
- padding: 40px 0;
+ padding: 105px 40px 40px 0;
  background-color: #f9fafc;
  display: flex;
  align-items: flex-start;

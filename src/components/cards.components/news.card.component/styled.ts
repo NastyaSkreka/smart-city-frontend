@@ -8,6 +8,8 @@ export const NewsCardContainer = styled.div`
   background-color: #ffff;
   border-radius: 15px;
   width: 303px;
+  margin:5px;
+  box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, 0.25);
   
 `
 export const NewsCardContent = styled.div`
