@@ -1,79 +1,150 @@
-
-
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import styled from 'styled-components';
-import 'swiper/css'; 
-import 'swiper/css/navigation'; 
-import { useState } from 'react';
+import styled from "styled-components";
+import "swiper/css";
+import "swiper/css/navigation";
+import SwiperCore from "swiper";
+import { useState, useRef, useEffect } from "react";
+import NextIcon from "../../../styles/icons/arr-right.svg";
+import PrevIcon from "../../../styles/icons/arr-left.svg";
+import NewsCardComponent from "../../cards.components/news.card.component";
+import DirectionCardComponent from "../../cards.components/direction.card.component";
 
-// Карточка
-const Card = styled.div<{ isActive: boolean }>`
+const SliderContainer = styled.div<{ isNews: boolean; position: string }>`
+  position: ${({ isNews }) => (isNews ? "absolute" : "relative")};
+  ${({ position, isNews }) =>
+    position === "right"
+      ? `right: ${isNews ? "10px" : "0"};`
+      : `left: ${isNews ? "10px" : "0"};`}
+  top: ${({ isNews }) => (isNews ? "60px" : "0")};
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 200px;
-  border-radius: 15px;
-  background-color: ${({ isActive }) => (isActive ? '#D8156B' : '#373839')};
-  color: white;
-  font-size: ${({ isActive }) => (isActive ? '24px' : '18px')};
-  transform: ${({ isActive }) => (isActive ? 'scale(1.1)' : 'scale(1)')};
-  transition: transform 0.3s ease, background-color 0.3s ease;
 `;
 
-// Контейнер для стрелок
-const SliderContainer = styled.div`
-  position: relative;
-  width: 80%;
-  margin: 0 auto;
+export const NavButtons = styled.div`
+  display: flex;
+  gap: 130px;
+  left: 35px;
+  position: absolute;
+  z-index: 10;
+  bottom: -25px;
+`;
 
-  .swiper-button-next,
-  .swiper-button-prev {
+export const PrevButton = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;
+
+export const NextButton = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;
+
+const SlideNumber = styled.div`
     position: absolute;
-    z-index: 10;
-    bottom: -40px; 
-    color: #999;
-    transition: color 0.3s ease;
+    right: 64px;
+    bottom: -88px;
+    font-family: "e-Ukraine Head",sans-serif;
+    font-weight: 100;
+    font-size: 36px;
+    line-height: 120%;
+    color: #656565;
+`;
 
-    &:hover {
-      color: #fff;
+export const StyledSwiper = styled(Swiper)<{ isNews: boolean }>`
+  display: flex;
+  max-width: ${({ isNews }) => (isNews ? "700px" : "576px")};
+  align-items: flex-end;
+  position: relative;
+`;
+
+export const StyledSwiperSlide = styled(SwiperSlide)<{ isNews: boolean }>`
+  width: ${({ isNews }) => (isNews ? "218px" : "164px")} !important;
+  height: ${({ isNews }) => (isNews ? "284px" : "")} !important;
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+
+  &.swiper-slide-active {
+    width: ${({ isNews }) => (isNews ? "303px" : "218px")} !important;
+    height: ${({ isNews }) => (isNews ? "395px" : "350px")} !important;
+    margin-left: 30px !important;
+  }
+`;
+
+const LineUnderArrows = styled.div`
+  border: 3px solid #d8156b;
+  width: 186px;
+  height: 0px;
+  position: absolute;
+  left: 22%;
+  transform: translateX(-50%);
+  bottom: -35px;
+`;
+
+function SliderComponent({ slides, isNews = false, position = "left" }: any) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState<any>(null);
+
+  useEffect(() => {
+    if (swiperInstance && isNews) {
+      const centerIndex = Math.floor(slides.length / 2);
+      setActiveIndex(centerIndex);
+      swiperInstance.slideToLoop(centerIndex, 0);
     }
-  }
+  }, [swiperInstance, isNews, slides.length]);
 
-  .swiper-button-prev {
-    left: 0; /* Привязка к левому краю первого слайда */
-    bottom: -50px;
-  }
+  const handlePrev = () => {
+    if (swiperInstance) swiperInstance.slidePrev();
+  };
 
-  .swiper-button-next {
-    right: auto; /* Убираем смещение вправо */
-    left: 290px; /* Расположение рядом с предыдущей стрелкой */
-  }`
+  const handleNext = () => {
+    if (swiperInstance) swiperInstance.slideNext();
+  };
 
-function SliderComponent() {
-    const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <SliderContainer>
-      <Swiper
-        slidesPerView={3} // Показываем 3 карточки
-    
-        spaceBetween={30} // Расстояние между карточками
-        navigation={true} // Добавляем стрелки
-    modules={[Navigation]}
-    onSlideChange={(swiper: any) => setActiveIndex(swiper.realIndex)} // Обновляем активный индекс
-    onInit={(swiper: any) => setActiveIndex(swiper.realIndex)}
+    <SliderContainer isNews={isNews} position={position}>
+      <StyledSwiper
+        isNews={isNews}
+        slidesPerView={3}
+        centeredSlides={isNews}
+        spaceBetween={isNews ? 20 : 18}
+        loop={true}
+        modules={[Navigation]}
+        onSwiper={(swiper: any) => setSwiperInstance(swiper)}
+        onSlideChange={(swiper: any) => setActiveIndex(swiper.realIndex)}
       >
-         {[...Array(5)].map((_, index) => (
-          <SwiperSlide key={index}>
-            <Card isActive={index === activeIndex}>
-              Card {index + 1}
-            </Card>
-          </SwiperSlide>
+        {slides.map((slide: any, index: number) => (
+          <StyledSwiperSlide key={index} isNews={isNews}>
+            {isNews ? (
+              <NewsCardComponent
+                slide={slide}
+                isActive={index === activeIndex}
+              />
+            ) : (
+              <DirectionCardComponent
+                slide={slide}
+                isActive={index === activeIndex}
+              />
+            )}
+          </StyledSwiperSlide>
         ))}
-      </Swiper>
+      </StyledSwiper>
+      <NavButtons>
+        <PrevButton onClick={handlePrev}>
+          <img src={PrevIcon} alt="arrow-icon" />
+        </PrevButton>
+        <NextButton onClick={handleNext}>
+          <img src={NextIcon} alt="arrow-icon" />
+        </NextButton>
+      </NavButtons>
+      <LineUnderArrows />
+      <SlideNumber>
+        {String(activeIndex + 1).padStart(2, "0")}
+      </SlideNumber>
     </SliderContainer>
   );
-};
+}
 
 export default SliderComponent;

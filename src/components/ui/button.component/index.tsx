@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import BtnArrowIcon from "../../../styles/icons/btn-arr.svg";
 
 const FillButton = styled.button`
   padding: 10px 40px;
@@ -12,33 +13,35 @@ const FillButton = styled.button`
   background: linear-gradient(90deg, #c41a65 0%, #373737 100%);
 `;
 
-
 const OutlineButton = styled.button`
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 24.5px;
+  padding: 7px 18px;
+  max-width: 233px;
+  border-radius: 15px;
   cursor: pointer;
   background-color: transparent;
-  color: #007bff;
-  border: 2px solid #007bff;
-  transition: all 0.3s ease;
+  border: 1px solid #494a4c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  &:hover {
-    background-color: #f0f0f0;
-  }
+  font-family: "e-Ukraine", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 122%;
+  letter-spacing: -0.04em;
+  color: #494a4c;
 
-  &:active {
-    background-color: #e0e0e0;
+  img {
+    font-size: 16px;
   }
 `;
 
 type ButtonVariant = "fill" | "outline";
 
 interface ButtonComponentProps {
-    variant?: ButtonVariant;
-    children: React.ReactNode;
-  }
+  variant?: ButtonVariant;
+  children: React.ReactNode;
+}
 
 function ButtonComponent({ variant = "fill", children }: ButtonComponentProps) {
   let ButtonType;
@@ -53,7 +56,12 @@ function ButtonComponent({ variant = "fill", children }: ButtonComponentProps) {
       break;
   }
 
-  return <ButtonType>{children}</ButtonType>;
+  return (
+    <ButtonType>
+      {children}
+      {variant === "outline" && <img src={BtnArrowIcon} alt="btn-icon" />}
+    </ButtonType>
+  );
 }
 
 export default ButtonComponent;

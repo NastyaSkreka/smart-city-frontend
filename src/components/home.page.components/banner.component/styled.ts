@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
-
 export const BannerContainer = styled.div`
- // display: flex;
- // justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding-top: 30px;
-  height: 637px;
+  height: 444px;
 `;
 
 
@@ -24,7 +23,9 @@ export const BannerTitle = styled.h1`
   margin: 0;
   font-weight: 700;
   font-family: 'e-Ukraine-Head';
- 
+  text-transform: uppercase;
+  line-height: 66px;
+  letter-spacing: 0.01px; 
   & span {
     background: linear-gradient(to bottom, #373839 70%, #999C9F 100%);
     -webkit-background-clip: text;
@@ -35,6 +36,7 @@ export const BannerTitle = styled.h1`
     background: linear-gradient(to bottom, #373839, #D8156B);
     -webkit-background-clip: text;
     color: transparent;
+    font-size: 64px;
   }
 `;
 
