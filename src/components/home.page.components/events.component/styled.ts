@@ -2,14 +2,17 @@ import styled from "styled-components";
 
 export const EventsContainer = styled.div`
   padding: 130px 0px;
-  background-color: #f9fafc;
+  background-color: var(--background-secondary-color);
   position: relative;
 `;
 export const EventsContent = styled.div`
   display: flex;
   justify-content: flex-start;
-  border: 1px solid #494a4c;
+  border: 1px solid var(--border-color);
   border-radius: 17px;
+  border-top-left-radius: 0; 
+  border-bottom-left-radius: 0;
+  border-left: none;
   height: 233px;
   padding: 16px 130px;
 `;
@@ -36,6 +39,6 @@ export const EventsContentText = styled.div`
   line-height: 121%;
   letter-spacing: -0.01em;
   text-align: justify;
-  color: #484848;
+  color: var(--text-color);
   margin-bottom: 13px;
 `;

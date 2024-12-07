@@ -1,32 +1,38 @@
 import ButtonComponent from "../../ui/button.component";
 import * as styled from "./styled";
-import NewsImage from "../../../styles/icons/news.png";
+import EventImage01 from "../../../styles/icons/event-card-img-01.png";
+import EventImage02 from "../../../styles/icons/event-card-img-02.png";
 import SliderComponent from "../../ui/slider.component";
 
 const slides = [
   {
     title: "Власникам пошкодженого житла у Запоріжжі виплатили 400 тис. грн",
-    image: NewsImage,
-    date: "07.10.2024",
-  },
-  {
-    title: "Вmdlrgmdlg,dk;g",
-    image: NewsImage,
+    image: EventImage01,
     date: "07.10.2024",
   },
   {
     title: "Власникам пошкодженого житла у Запоріжжі виплатили 400 тис. грн",
-    image: NewsImage,
+    image: EventImage02,
     date: "07.10.2024",
   },
   {
     title: "Власникам пошкодженого житла у Запоріжжі виплатили 400 тис. грн",
-    image: NewsImage,
+    image: EventImage02,
     date: "07.10.2024",
   },
   {
     title: "Власникам пошкодженого житла у Запоріжжі виплатили 400 тис. грн",
-    image: NewsImage,
+    image: EventImage01,
+    date: "07.10.2024",
+  },
+  {
+    title: "Власникам пошкодженого житла у Запоріжжі виплатили 400 тис. грн",
+    image: EventImage02,
+    date: "07.10.2024",
+  },
+  {
+    title: "Власникам пошкодженого житла у Запоріжжі виплатили 400 тис. грн",
+    image: EventImage02,
     date: "07.10.2024",
   },
 ];

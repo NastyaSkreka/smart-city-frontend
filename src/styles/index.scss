@@ -2,9 +2,10 @@
 @import './fonts/fonts.scss';
 
 :root {
-  --secondary-color: #f9fafc;
-  --background-color: #ffff;
-
+   --background-color: #ffff;
+  --background-secondary-color: #f9fafc;
+  --text-color: #484848;
+  --border-color: #494A4C;
 }
 
 body {

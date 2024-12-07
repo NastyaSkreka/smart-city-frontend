@@ -25,7 +25,7 @@ export const NavButtons = styled.div<{ isNews: boolean, isCenterSlideActive: boo
   gap: ${({ isNews, isCenterSlideActive }) =>
   isNews && isCenterSlideActive ? "250px" : isNews ? "242px" : "135px"} !important;
   left: ${({ isNews, isCenterSlideActive }) =>
-  isNews && isCenterSlideActive ? "220px" : isNews ? "5px" : "45px"} !important;
+  isNews && isCenterSlideActive ? "180px" : isNews ? "-5px" : "70px"} !important;
   position: absolute;
   z-index: 10;
   bottom: ${({ isNews, isCenterSlideActive }) =>
@@ -47,12 +47,10 @@ export const NextButton = styled.button`
 const SlideNumber = styled.div<{ isNews: boolean, isCenterSlideActive: boolean }>`
     position: absolute;
     ${({ isNews, isCenterSlideActive }) =>
-    isNews && isCenterSlideActive ? "left: 14px;" : "right: 0px;"}
+    isNews && isCenterSlideActive ? "left: 14px;" : "right: 43px;"}
 
     bottom: ${({ isNews, isCenterSlideActive }) =>
     isNews && isCenterSlideActive ? "-43px" : isNews ? "-43px" : "-88px"};
-
-    font-family: "e-Ukraine-Head";
     font-weight: 100;
     font-size: 36px;
     line-height: 120%;
@@ -63,7 +61,7 @@ export const StyledSwiper = styled(Swiper)<{ isNews: boolean, isCenterSlideActiv
   display: flex;
 
   max-width: ${({ isNews, isCenterSlideActive }) =>
-  isNews && isCenterSlideActive ? "750px" : isNews ? "770px" : "576px"} !important;
+  isNews && isCenterSlideActive ? "690px" : isNews ? "645px" : "525px"} !important;
 
   align-items: flex-end;
   position: relative;
@@ -81,12 +79,11 @@ export const StyledSwiperSlide = styled(SwiperSlide)<{ isNews: boolean, isCenter
   &.swiper-slide-active {
     width: ${({ isNews }) => (isNews ? "303px" : "218px")} !important;
     height: ${({ isNews }) => (isNews ? "405px" : "350px")} !important;
-    margin-left: ${({ isNews, isCenterSlideActive }) =>
-    isNews && isCenterSlideActive ? "-5px" : isNews ? "60px" : "50px"} !important;
-    margin-right: ${({ isNews }) => (isNews ? "5px" : "10px")} !important;
+  
+    margin-right: ${({ isNews }) => (isNews ? "" : "10px")} !important;
   }
 
-  &.swiper-slide-active:nth-of-type(1) {
+   &.swiper-slide-active:nth-of-type(1) {
     margin-left: 0 !important;
   }
 `;
@@ -99,7 +96,7 @@ const LineUnderArrows = styled.div<{ isNews: boolean, isCenterSlideActive: boole
 
   position: absolute;
   left: ${({ isNews, isCenterSlideActive }) =>
-  isNews && isCenterSlideActive ? "51%" : "22%"};
+  isNews && isCenterSlideActive ? "50%" : isNews ? "22%" : "27%" };
 
   transform: translateX(-50%);
   bottom: -35px;
@@ -111,7 +108,7 @@ const LineUnderArrows = styled.div<{ isNews: boolean, isCenterSlideActive: boole
 const SecondLineUnderArrows = styled.div<{ isNews: boolean, isCenterSlideActive: boolean }>`
   border: 1px solid #bcbcbc;
   width: ${({ isNews, isCenterSlideActive }) =>
-  isNews && isCenterSlideActive ? "750px" :  "670px"};
+  isNews && isCenterSlideActive ? "690px" :  "590px"};
   position: absolute;
   left: ${({ isNews, isCenterSlideActive }) =>
   isNews && isCenterSlideActive ? "50%" :  "55%"}; 
@@ -147,11 +144,11 @@ function SliderComponent({ slides, isNews = false, position = "left", isCenterSl
         slidesPerView={3}
         isCenterSlideActive={isCenterSlideActive}
         centeredSlides={isCenterSlideActive}
-        spaceBetween={isNews ? 20 : 18}
+        spaceBetween={isNews ? -4 : 18}
         loop={true}
         modules={[Navigation]}
-        onSwiper={(swiper: any) => setSwiperInstance(swiper)}
-        onSlideChange={(swiper: any) => setActiveIndex(swiper.realIndex)}
+        onSwiper={(swiper: SwiperCore) => setSwiperInstance(swiper)}
+        onSlideChange={(swiper: SwiperCore) => setActiveIndex(swiper.realIndex)}
       >
         {slides.map((slide: any, index: number) => (
           <StyledSwiperSlide key={index} isNews={isNews} isCenterSlideActive={isCenterSlideActive}>

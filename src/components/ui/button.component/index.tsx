@@ -6,7 +6,7 @@ const FillButton = styled.button`
   font-size: 14px;
   border-radius: 33px;
   cursor: pointer;
-  color: #fff;
+  color: var(--background-color);
   font-family: "e-Ukraine";
   border: none;
   width: 157px;
@@ -19,7 +19,7 @@ const OutlineButton = styled.button`
   border-radius: 15px;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #494a4c;
+  border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,7 +29,7 @@ const OutlineButton = styled.button`
   font-size: 14px;
   line-height: 122%;
   letter-spacing: -0.04em;
-  color: #494a4c;
+  color: var(--border-color);
 
   img {
     font-size: 16px;

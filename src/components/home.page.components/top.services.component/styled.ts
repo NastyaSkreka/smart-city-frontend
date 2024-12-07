@@ -41,7 +41,7 @@ export const ServiceItem = styled.div`
     transform: translateY(-50%);
     width: 1px;
     height: 50px;
-    background-color: #494A4C; 
+    background-color: var(--border-color); 
   }
 
   span {

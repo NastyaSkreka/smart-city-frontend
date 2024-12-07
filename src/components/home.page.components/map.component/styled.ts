@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MapContainer = styled.div`
  padding: 105px 40px 40px 0;
- background-color: #f9fafc;
+ background-color: var(--background-secondary-color);
  display: flex;
  align-items: flex-start;
  gap: 40px;
@@ -40,5 +40,5 @@ export const MapContentText = styled.div`
     line-height: 137%;
     letter-spacing: -0.04em;
     text-align: justify;
-    color: #484848;
+    color: var(--text-color);
 `

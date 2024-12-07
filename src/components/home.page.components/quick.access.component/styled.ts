@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const QuickAccessContainer = styled.div`
   padding-top: 88px;
   padding-bottom: 30px;
-  background-color: #f9fafc;
+  background-color: var(--background-secondary-color);
 `;
 
 export const QuickAccessContent = styled.div`
-  background-color: #fff;
+  background-color: var(--background-color);
   padding: 18px 0px 0px 19px;
   display: flex;
   gap: 15px;
