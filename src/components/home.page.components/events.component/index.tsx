@@ -3,6 +3,7 @@ import * as styled from "./styled";
 import EventImage01 from "../../../styles/icons/event-card-img-01.png";
 import EventImage02 from "../../../styles/icons/event-card-img-02.png";
 import SliderComponent from "../../ui/slider.component";
+import NewsCardComponent from "../../cards.components/news.card.component";
 
 const slides = [
   {
@@ -42,6 +43,11 @@ function EventsComponent() {
     <styled.EventsContainer>
       <styled.EventsContent>
         <SliderComponent slides={slides} isNews position="right" />
+        <styled.EventsCardTabletContainer>
+       {slides.slice(0, 2).map((card: any, index: any) => (
+            <NewsCardComponent key={index} slide={card} isActive={true}/>
+            ))}
+        </styled.EventsCardTabletContainer>
         <styled.EventsContentBody>
           <styled.EventsContentTitle>Події</styled.EventsContentTitle>
 

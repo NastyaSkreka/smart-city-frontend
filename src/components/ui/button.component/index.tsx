@@ -22,7 +22,7 @@ const FillButton = styled.button`
 const OutlineButton = styled.button`
   padding: 7px 18px;
   max-width: 233px;
-  border-radius: 15px;
+  border-radius: 17px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid var(--border-color);
@@ -51,6 +51,11 @@ const OutlineButton = styled.button`
   &:hover img {
     filter: invert(39%) sepia(55%) saturate(394%) hue-rotate(305deg)
       brightness(94%) contrast(94%);
+  }
+
+  @media (max-width: 744px) {
+    font-weight: 300;
+    font-size: 12px;
   }
 `;
 

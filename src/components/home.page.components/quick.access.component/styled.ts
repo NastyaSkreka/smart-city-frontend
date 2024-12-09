@@ -4,6 +4,11 @@ export const QuickAccessContainer = styled.div`
   padding-top: 88px;
   padding-bottom: 30px;
   background-color: var(--background-secondary-color);
+
+  @media (max-width: 744px) {
+    background-color: var(--background-color);
+    padding-top: 0;
+  }
 `;
 
 export const QuickAccessContent = styled.div`
@@ -33,6 +38,11 @@ export const QuickAccessItems = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+
+  @media (max-width: 744px) {
+    gap: 13px;
+    justify-content: space-between;
+  }
 `;
 
 export const QuickAccessItem = styled.div`

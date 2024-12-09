@@ -1,8 +1,8 @@
 import ButtonComponent from "../../ui/button.component";
 import * as styled from "./styled";
-
 import NewsImage from '../../../styles/icons/news.png'
 import SliderComponent from "../../ui/slider.component";
+import NewsCardComponent from "../../cards.components/news.card.component";
 
 const slides = [
     {
@@ -28,13 +28,7 @@ const slides = [
         image: NewsImage,
         date: '07.10.2024', 
   
-      },
-      {
-        title: "Власникам пошкодженого житла у Запоріжжі виплатили 400 тис. грн",
-        image: NewsImage,
-        date: '07.10.2024', 
-  
-      },
+      }
    
   ];
 
@@ -48,6 +42,12 @@ function NewsComponent() {
          isCenterSlideActive
          position="left"
         />
+        <styled.NewsCardTabletContainer>
+       {slides.slice(0, 2).map((card: any, index: any) => (
+            <NewsCardComponent key={index} slide={card} isActive={true}/>
+            ))}
+        </styled.NewsCardTabletContainer>
+
         <styled.NewsContentBody>
           <styled.NewsContentTitle>Новини</styled.NewsContentTitle>
            
@@ -69,3 +69,4 @@ function NewsComponent() {
 }
 
 export default NewsComponent;
+

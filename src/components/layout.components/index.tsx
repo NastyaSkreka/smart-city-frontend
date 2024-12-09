@@ -13,7 +13,7 @@ function PageLayoutComponent({ children }: PageLayoutProps) {
         <>
          <HeaderComponent/>
          {children}
-         <FooterComponent/>
+          <FooterComponent/> 
         </>
     )
 }

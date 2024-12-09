@@ -6,6 +6,13 @@ export const BannerContainer = styled.div`
   align-items: center;
   padding-top: 30px;
   height: 380px;
+
+  @media (max-width: 744px) {
+     flex-direction: column;
+     height: auto;
+     align-items: start;
+     gap: 50px;
+  }
 `;
 
 
@@ -15,6 +22,10 @@ export const BannerTextBody = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: -40px;
+
+  @media (max-width: 744px) {
+    padding-left: 35px;
+ }
 `;
 
 export const BannerTitle = styled.h1`

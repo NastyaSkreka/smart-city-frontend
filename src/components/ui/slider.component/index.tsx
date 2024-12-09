@@ -18,6 +18,10 @@ const SliderContainer = styled.div<{ isNews: boolean; position: string }>`
       : `left: ${isNews ? "10px" : "0"};`}
   top: ${({ isNews }) => (isNews ? "60px" : "0")};
   display: flex;
+
+  @media (max-width: 744px) {
+    display: none; 
+  }
 `;
 
 export const NavButtons = styled.div<{ isNews: boolean, isCenterSlideActive: boolean }>`

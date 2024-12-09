@@ -7,11 +7,22 @@ export const MapContainer = styled.div`
  align-items: flex-start;
  gap: 40px;
  padding-right: 40px;
+
+ @media (max-width: 744px) {
+    gap: 32px;
+ }
 `
 
 export const MapImg = styled.img`
     width: 949px;
     height: 425px;
+
+    @media (max-width: 744px) {
+        width: 380px;
+        height: 397px;
+        object-fit: cover;
+        object-position: center; 
+     }
 `
 
 export const MapContent = styled.div`
@@ -20,6 +31,10 @@ export const MapContent = styled.div`
    flex-direction: column;
    gap: 12px;
    gap: 40px;
+
+   @media (max-width: 744px) {
+    gap: 15px;
+ }
 `
 
 export const MapContentTitle = styled.div`
@@ -32,7 +47,12 @@ export const MapContentTitle = styled.div`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: 744px) {
+        font-size: 48px; 
+     }
 `
+
 export const MapContentText = styled.div`
     font-family: "e-Ukraine", sans-serif;
     font-weight: 500;
@@ -41,4 +61,8 @@ export const MapContentText = styled.div`
     letter-spacing: -0.04em;
     text-align: justify;
     color: var(--text-color);
+
+    @media (max-width: 744px) {
+        line-height: 130%;
+     }
 `

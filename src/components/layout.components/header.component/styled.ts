@@ -6,6 +6,11 @@ export const Header = styled.header`
   padding: 45px 85px 10px 120px;
   position: relative;
   z-index: 100;
+
+  @media (max-width: 744px) {
+    background-color: var(--background-color);
+    padding: 45px 20px 10px 55px;
+  }
 `;
 
 export const HeaderContainer = styled.div`
@@ -17,20 +22,26 @@ export const Logo = styled.img`
   width: 170px;
   height: 40px;
 `;
+
+export const LogoMenuColumn = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 70px;
+
+  @media (max-width: 744px) {
+    flex-direction: row-reverse;
+    gap: 40px;
+  }
+`;
 export const WeatherColumn = styled.div`
   align-self: flex-end;
-
   font-family: "e-Ukraine", sans-serif;
   font-weight: 200;
   font-size: 16px;
   letter-spacing: 0.02em;
 `;
 
-export const LogoMenuColumn = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 70px;
-`;
+
 
 export const LocationLabel = styled.div`
   align-self: flex-end;
@@ -45,6 +56,10 @@ export const UserInfoColumn = styled.div`
 export const menuIcon = styled.img`
   align-self: flex-end;
   cursor: pointer;
+
+  @media (max-width: 744px) {
+    align-self: center;
+  }
 `;
 
 export const Overlay = styled.div`

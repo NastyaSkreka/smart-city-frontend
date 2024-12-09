@@ -4,6 +4,7 @@ import * as styled from "./styled";
 import CardImage1 from "../../../styles/icons/direction-card-img-01.png";
 import CardImage2 from "../../../styles/icons/direction-card-img-02.png";
 import CardImage3 from "../../../styles/icons/direction-card-img-03.png";
+import DirectionTabletCardsComponent from "../../cards.components/direction.card.component/direction.tablet.cards.component";
 
 const slides = [
   {
@@ -47,9 +48,9 @@ function BannerComponent() {
         </styled.BannerText>
         <InputComponent hasIcon placeholder="Пошук по порталу" width="222px" />
       </styled.BannerTextBody>
-
       <styled.BannerSlider>
         <SliderComponent slides={slides} />
+         <DirectionTabletCardsComponent cards={slides}/>
       </styled.BannerSlider>
     </styled.BannerContainer>
   );

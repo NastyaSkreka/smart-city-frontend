@@ -4,6 +4,11 @@ export const EventsContainer = styled.div`
   padding: 130px 0px;
   background-color: var(--background-secondary-color);
   position: relative;
+
+  @media (max-width: 744px) {
+    background-color: var(--background-color);
+        padding: 31px 0px;
+    }
 `;
 export const EventsContent = styled.div`
   display: flex;
@@ -15,11 +20,25 @@ export const EventsContent = styled.div`
   border-left: none;
   height: 233px;
   padding: 16px 130px;
+
+  @media (max-width: 744px) {
+    height: auto;
+    gap: 20px;
+    flex-direction: row-reverse;
+    padding: 16px 30px 0 0;
+    background-color: var(--background-secondary-color);
+    }
 `;
 export const EventsContentBody = styled.div`
   display: flex;
   flex-direction: column;
   width: 504px;
+
+    @media (max-width: 744px) {
+    display: flex;
+    justify-content: center;
+    gap: 33px;
+  }
 `;
 export const EventsContentTitle = styled.div`
   font-family: "e-Ukraine-Head", sans-serif;
@@ -31,6 +50,10 @@ export const EventsContentTitle = styled.div`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+     @media (max-width: 744px) {
+        font-size: 48px;
+      }
 `;
 export const EventsContentText = styled.div`
   font-family: "e-Ukraine", sans-serif;
@@ -42,3 +65,13 @@ export const EventsContentText = styled.div`
   color: var(--text-color);
   margin-bottom: 13px;
 `;
+
+export const EventsCardTabletContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @media (min-width: 744px) {
+    display: none;
+    }
+`
+

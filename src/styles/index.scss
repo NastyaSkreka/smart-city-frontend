@@ -27,3 +27,22 @@ body {
   box-sizing: border-box;
   background-color: var(--background-color); 
 }
+
+
+@media (max-width: 744px) {
+    #root {
+      width: 100%; 
+      padding: 0 15px; 
+    }
+  }
+  
+  @media (max-width: 430px) {
+    #root {
+      width: 100%; 
+      padding: 0 10px; 
+    }
+  
+    body {
+      font-size: 12px;
+    }
+  }

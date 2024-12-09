@@ -9,6 +9,11 @@ export const FooterTop = styled.div`
   gap: 107px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap-reverse;
+
+  @media (max-width: 744px) {
+    gap: 40px;
+  }
 `;
 
 export const FooterBottom = styled.div`
@@ -17,6 +22,10 @@ export const FooterBottom = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 744px) {
+    text-align: center;
+  }
 `;
 
 export const FooterLogo = styled.div`
