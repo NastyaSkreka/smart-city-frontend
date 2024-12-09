@@ -35,7 +35,7 @@ function HeaderComponent() {
         <styled.WeatherColumn>+7°C...+17°C</styled.WeatherColumn>
         <styled.UserInfoColumn>
           <styled.LocationLabel>UK</styled.LocationLabel>
-          <img src={hiddenIcon} alt="visibility-icon" />
+          <styled.VisibilityIcon src={hiddenIcon} alt="visibility-icon" />
           <img src={userIcon} alt="user-icon" />
         </styled.UserInfoColumn>
       </styled.HeaderContainer>

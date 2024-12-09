@@ -21,6 +21,11 @@ export const HeaderContainer = styled.div`
 export const Logo = styled.img`
   width: 170px;
   height: 40px;
+
+  @media (max-width: 430px) {
+    width: 88px;
+    height: 22px;
+  }
 `;
 
 export const LogoMenuColumn = styled.div`
@@ -32,6 +37,10 @@ export const LogoMenuColumn = styled.div`
     flex-direction: row-reverse;
     gap: 40px;
   }
+
+  @media (max-width: 430px) {
+    gap: 20px;
+  }
 `;
 export const WeatherColumn = styled.div`
   align-self: flex-end;
@@ -39,19 +48,38 @@ export const WeatherColumn = styled.div`
   font-weight: 200;
   font-size: 16px;
   letter-spacing: 0.02em;
-`;
 
+  @media (max-width: 430px) {
+    display: none;
+  }
+`;
 
 
 export const LocationLabel = styled.div`
   align-self: flex-end;
+
+  @media (max-width: 430px) {
+    display: none;
+  }
+ 
 `;
+
+export const VisibilityIcon = styled.img`
+@media (max-width: 430px) {
+    display: none;
+  }
+`
 
 export const UserInfoColumn = styled.div`
   display: flex;
   align-self: flex-end;
   justify-content: space-between;
   width: 122px;
+
+  @media (max-width: 430px) {
+    width: 0px;
+    align-self: center;
+  }
 `;
 export const menuIcon = styled.img`
   align-self: flex-end;

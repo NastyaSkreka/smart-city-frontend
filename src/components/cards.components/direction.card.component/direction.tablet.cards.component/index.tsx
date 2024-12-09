@@ -23,6 +23,10 @@ const CardWrapper = styled.div`
   @media (min-width: 744px) {
     display: none;
   }
+
+  @media (max-width: 430px) {
+    grid-template-columns: 1fr; 
+  }
 `;
 
 const ShowMoreButton = styled.div`

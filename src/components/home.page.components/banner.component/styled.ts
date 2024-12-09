@@ -42,6 +42,10 @@ export const BannerTitle = styled.h1`
     background: linear-gradient(to bottom, #373839 70%, #999C9F 100%);
     -webkit-background-clip: text;
     color: transparent;
+
+    @media (max-width: 430px) {
+        font-size: 52px;
+     }
   }
 
   & .highlightZaporizhzhya {
@@ -51,6 +55,10 @@ export const BannerTitle = styled.h1`
     color: transparent;
     font-size: 64px;
     letter-spacing: -0.03em;
+
+    @media (max-width: 430px) {
+        font-size: 48px;
+     }
   }
 `;
 
@@ -72,4 +80,5 @@ export const BannerText = styled.p`
 
 export const BannerSlider = styled.div`
   flex: 1; 
+  margin-top: 128px
 `;

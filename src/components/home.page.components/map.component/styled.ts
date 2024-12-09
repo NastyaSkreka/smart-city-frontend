@@ -11,6 +11,11 @@ export const MapContainer = styled.div`
  @media (max-width: 744px) {
     gap: 32px;
  }
+
+ @media (max-width: 430px) {
+   flex-direction: column-reverse;
+   padding: 20px 40px 40px 0;
+ }
 `
 
 export const MapImg = styled.img`

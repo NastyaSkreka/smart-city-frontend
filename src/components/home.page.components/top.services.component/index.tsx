@@ -11,10 +11,7 @@ function TopServicesComponent() {
         <styled.ServiceItem>
           <styled.ServiceItemBody>
             <styled.ServiceImage
-              style={{
-                width: "50px",
-                height: "50px",
-              }}
+             
               src={ContactCenter}
               alt="service-img"
             />
@@ -28,10 +25,7 @@ function TopServicesComponent() {
         <styled.ServiceItem>
           <styled.ServiceItemBody>
             <styled.ServiceImage
-              style={{
-                width: "64px",
-                height: "67px",
-              }}
+             
               src={JobsZp}
               alt="service-img"
             />
@@ -44,10 +38,7 @@ function TopServicesComponent() {
         <styled.ServiceItem>
           <styled.ServiceItemBody>
             <styled.ServiceImage
-              style={{
-                width: "69px",
-                height: "68px",
-              }}
+              
               src={Map}
               alt="service-img"
             />

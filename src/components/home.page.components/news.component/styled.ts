@@ -9,6 +9,10 @@ export const NewsContainer = styled.div`
     background-color: var(--background-color);
     padding: 31px 0px;
   }
+
+  @media (max-width: 430px) {
+    padding-top: 330px;
+  }
 `
 export const NewsContent = styled.div`
   display: flex;
@@ -27,6 +31,10 @@ export const NewsContent = styled.div`
     padding: 16px 30px 0 0;
     background-color: var(--background-secondary-color);
   }
+
+  @media (max-width: 430px) {
+    padding: 16px 5px 0 0;
+  }
 `
 export const NewsContentBody = styled.div`
   display: flex;
@@ -39,7 +47,17 @@ export const NewsContentBody = styled.div`
     justify-content: center;
     gap: 33px;
   }
+
+  @media (max-width: 430px) {
+    position: absolute; 
+  top: -100px;
+  left: 16px; 
+  z-index: 10; 
+  width: calc(100% - 30px);
+  padding-top: 100px;
+  }
 `
+
 export const NewsContentTitle = styled.div`
     font-family: "e-Ukraine-Head", sans-serif;
     font-weight: 500;
@@ -69,7 +87,6 @@ export const NewsContentText = styled.div`
 `
 
 export const NewsCardTabletContainer = styled.div`
-
  display: flex;
  flex-direction: column;
  gap: 10px;

@@ -24,6 +24,10 @@ const inactiveStyles = css`
     box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.37);
     border: none;
   }
+
+  @media (max-width: 430px) {
+    width: 100%; 
+  }
 `;
 
 export const CardContainer = styled.div<{ isActive: boolean }>`

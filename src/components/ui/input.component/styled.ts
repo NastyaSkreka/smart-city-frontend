@@ -20,6 +20,10 @@ export const Input = styled.input<{ hasIcon: boolean; width: string }>`
     font-size: 16px;
     color: #8d8d8d;
   }
+
+  @media (max-width: 430px) {
+    display: none;
+  }
 `;
 
 export const Icon = styled.img`

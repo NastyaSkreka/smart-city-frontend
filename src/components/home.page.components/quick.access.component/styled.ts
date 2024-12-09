@@ -34,7 +34,7 @@ export const QuickAccessTitle = styled.div`
 `;
 export const QuickAccessItems = styled.div`
   display: flex;
-  gap: 17px;
+  gap: 15px;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;

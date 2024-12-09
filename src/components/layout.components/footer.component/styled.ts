@@ -86,6 +86,11 @@ export const BaseText = styled.div`
 
 export const Text = styled(BaseText)<{ color?: string }>`
   color: ${({ color }) => color || "inherit"};
+ 
+  @media (max-width: 430px) {
+    font-size: 9px;
+  }
+
 `;
 
 export const FooterFormContainer = styled.div`
@@ -96,4 +101,8 @@ export const FooterFormContainer = styled.div`
 export const FormActions = styled.div`
   display: flex;
   gap: 10px;
+
+  @media (max-width: 430px) {
+    margin: 0 auto;
+  }
 `;

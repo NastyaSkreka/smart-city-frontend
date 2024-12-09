@@ -3,10 +3,9 @@ import styled from "styled-components";
 export const ServicesContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 110x;
   padding-bottom: 30px;
   gap: 77px;
-  margin: 0 auto;
+  margin: 110px auto 0;
 
   @media (max-width: 744px) {
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
@@ -14,6 +13,10 @@ export const ServicesContainer = styled.div`
     width: 100%;
     margin-bottom: 40px;
     padding: 0 5px;
+  }
+
+  @media (max-width: 430px) {
+    width: 100%;
   }
 `;
 
@@ -32,6 +35,12 @@ background-clip: text;
     font-size: 16px;
     letter-spacing: 0.03em;
   }
+
+  @media (max-width: 744px) {
+    font-size: 12px;
+    width: 65px;
+
+  }
 `;
 
 export const ServicesItems = styled.div`
@@ -40,6 +49,10 @@ export const ServicesItems = styled.div`
 
   @media (max-width: 744px) {
     gap: 25px;
+  }
+
+  @media (max-width: 430px) {
+    gap: 5px;
   }
 `;
 
@@ -53,6 +66,10 @@ export const ServiceItem = styled.div`
 
   @media (max-width: 744px) {
     width: 150px; 
+  }
+
+  @media (max-width: 430px) {
+    width: 75px; 
   }
 
 ::after {
@@ -85,6 +102,12 @@ export const ServiceItem = styled.div`
 `;
 
 export const ServiceImage = styled.img`
+width: 50px;
+height: 50px;
+@media (max-width: 430px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export const ServiceNumber = styled.div`

@@ -9,6 +9,10 @@ export const EventsContainer = styled.div`
     background-color: var(--background-color);
         padding: 31px 0px;
     }
+
+    @media (max-width: 430px) {
+        padding-top: 330px;
+      }
 `;
 export const EventsContent = styled.div`
   display: flex;
@@ -28,6 +32,10 @@ export const EventsContent = styled.div`
     padding: 16px 30px 0 0;
     background-color: var(--background-secondary-color);
     }
+
+    @media (max-width: 430px) {
+        padding: 16px 5px 0 0;
+      }
 `;
 export const EventsContentBody = styled.div`
   display: flex;
@@ -38,6 +46,15 @@ export const EventsContentBody = styled.div`
     display: flex;
     justify-content: center;
     gap: 33px;
+  }
+
+  @media (max-width: 430px) {
+    position: absolute; 
+  top: -100px;
+  left: 16px; 
+  z-index: 10; 
+  width: calc(100% - 30px);
+  padding-top: 100px;
   }
 `;
 export const EventsContentTitle = styled.div`
