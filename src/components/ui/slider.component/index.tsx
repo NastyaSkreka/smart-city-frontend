@@ -89,7 +89,7 @@ export const StyledSwiperSlide = styled(SwiperSlide)<{ isNews: boolean, isCenter
 `;
 
 const LineUnderArrows = styled.div<{ isNews: boolean, isCenterSlideActive: boolean }>`
-  border: 3px solid #d8156b;
+  border: 3px solid var(--pink-decor-color);
   
   width: ${({ isNews, isCenterSlideActive }) =>
   isNews && isCenterSlideActive ? "315px" : isNews ? "300px" : "186px"};
@@ -146,6 +146,7 @@ function SliderComponent({ slides, isNews = false, position = "left", isCenterSl
         centeredSlides={isCenterSlideActive}
         spaceBetween={isNews ? -4 : 18}
         loop={true}
+        speed={1000}
         modules={[Navigation]}
         onSwiper={(swiper: SwiperCore) => setSwiperInstance(swiper)}
         onSlideChange={(swiper: SwiperCore) => setActiveIndex(swiper.realIndex)}

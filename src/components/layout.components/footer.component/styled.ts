@@ -67,11 +67,16 @@ export const Title = styled.div`
   color: transparent;
 `;
 
-export const Text = styled.div`
-  color: #515151;
+export const BaseText = styled.div`
+  font-family: "e-Ukraine", sans-serif;
+  font-weight: 500;
   font-size: 14px;
-  font-weight: 400;
   line-height: 137%;
+  letter-spacing: -0.04em;
+`;
+
+export const Text = styled(BaseText)<{ color?: string }>`
+  color: ${({ color }) => color || "inherit"};
 `;
 
 export const FooterFormContainer = styled.div`

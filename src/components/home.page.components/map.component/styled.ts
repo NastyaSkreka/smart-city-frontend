@@ -28,7 +28,7 @@ export const MapContentTitle = styled.div`
     font-size: 70px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    background: linear-gradient(174deg, #373839 0%, #d8156b 100%);
+    background: linear-gradient(174deg, #373839 0%, var(--pink-decor-color) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

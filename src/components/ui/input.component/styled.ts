@@ -12,6 +12,7 @@ export const Input = styled.input<{ hasIcon: boolean; width: string }>`
   font-size: 16px;
   outline: none;
   position: relative;
+  font-family: "e-Ukraine", sans-serif;
 
   &::placeholder {
     font-family: "e-Ukraine", sans-serif;
@@ -28,6 +29,6 @@ export const Icon = styled.img`
   transform: translateY(-50%);
   width: 32px;
   height: 27px;
-  z-index: 10;
+  z-index: 1;
   pointer-events: none;
 `;

@@ -9,13 +9,13 @@ function FooterComponent() {
       <styled.FooterTop>
         <styled.FooterLogo>
           <styled.FooterLogoImg src={logo} alt="footer-logo-img" />
-          <styled.FooterLogoText>Запорізька міська рада</styled.FooterLogoText>
+          <styled.FooterLogoText color="#2f2f2f">Запорізька міська рада</styled.FooterLogoText>
         </styled.FooterLogo>
 
         <styled.FooterTextCol>
           <styled.Title>Технічне забезпечення:</styled.Title>
-          <styled.Text>
-            комунальне підприємство <br/> «Центр управління інформаційними
+          <styled.Text color="#515151">
+            комунальне підприємство <br/> «Центр управління <br/> інформаційними
             технологіями»
           </styled.Text>
         </styled.FooterTextCol>
@@ -23,7 +23,7 @@ function FooterComponent() {
         <styled.FooterForm>
           <styled.FooterFormContainer>
             <styled.Title>Відгуки та пропозиції</styled.Title>
-            <styled.Text>
+            <styled.Text color="var(--text-color)">
               Ми цінуємо думку кожного нашого клієнта, тому створили розділ
               "Відгуки та пропозиції". Тут ви можете залишити свої відгуки,
               поділитися ідеями щодо покращення сервісу чи висловити зауваження
@@ -41,7 +41,7 @@ function FooterComponent() {
         
       </styled.FooterTop>
       <styled.FooterBottom>
-      <styled.Text>
+      <styled.Text color="#2f2f2f">
       Розроблено комунальним підприємством «Центр управління інформаційними
         технологіями» | © 2024
           </styled.Text>

@@ -35,7 +35,7 @@ export const BannerTitle = styled.h1`
 
   & .highlightZaporizhzhya {
     font-family: 'e-Ukraine-Head';
-    background: linear-gradient(to bottom, #373839, #D8156B);
+    background: linear-gradient(to bottom, #373839, var(--pink-decor-color));
     -webkit-background-clip: text;
     color: transparent;
     font-size: 64px;
@@ -55,7 +55,7 @@ export const BannerText = styled.p`
   }
 
   & .solidText {
-    color: #D8156B; 
+    color: var(--pink-decor-color); 
   }
 `;
 

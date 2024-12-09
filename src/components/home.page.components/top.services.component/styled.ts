@@ -14,7 +14,7 @@ font-family: "e-Ukraine-Head", sans-serif;
 font-weight: 400;
 font-size: 20px;
 letter-spacing: 0.03em;
-background: linear-gradient(158deg, #3c3d3e 0%, #d8156b 100%);
+background: linear-gradient(158deg, #3c3d3e 0%, var(--pink-decor-color) 100%);
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;

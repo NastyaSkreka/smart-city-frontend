@@ -10,7 +10,13 @@ const FillButton = styled.button`
   font-family: "e-Ukraine";
   border: none;
   width: 157px;
+  transition: background 0.3s ease, transform 0.3s ease;
   background: linear-gradient(90deg, #c41a65 0%, #373737 100%);
+
+  &:hover {
+    background: linear-gradient(90deg, #f56a8d 0%, #585858 100%);
+    transform: scale(1.05);
+  }
 `;
 
 const OutlineButton = styled.button`
@@ -30,9 +36,21 @@ const OutlineButton = styled.button`
   line-height: 122%;
   letter-spacing: -0.04em;
   color: var(--border-color);
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 
   img {
     font-size: 16px;
+  }
+
+  &:hover {
+    border-color: var(--pink-decor-color);
+    color: var(--pink-decor-color);
+    transform: scale(1.05);
+  }
+
+  &:hover img {
+    filter: invert(39%) sepia(55%) saturate(394%) hue-rotate(305deg)
+      brightness(94%) contrast(94%);
   }
 `;
 
